@@ -1,0 +1,34 @@
+body,html{
+	padding: 0px;
+	margin: 0px;	
+}
+.banner {
+	position:relative;
+	width: 100%;
+	overflow: auto;
+	padding: 0px;
+	margin: 0px;
+	
+}
+.banner ul{
+	padding: 0px;
+	margin: 0px;
+	
+}
+.banner li{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+.banner ul li{
+	float: left;
+	padding: 0px;
+	margin: 0px;
+	min-height: 350px;
+	-webkit-background-size:100% auto;
+	background-position-y: -75px;
+	background-size: :100% auto;
+	
+	
+	
+}
