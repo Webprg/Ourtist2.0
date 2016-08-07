@@ -9,9 +9,9 @@ public class DBManager {
 	public static Connection getConnection() throws SQLException{
 		BasicDataSource bds = new BasicDataSource();
 		bds.setDriverClassName("com.mysql.jdbc.Driver");
-		bds.setUrl("jdbc:mysql://localhost:3306/songdb");
+		bds.setUrl("jdbc:mysql://localhost:3306/ourtist");
 		bds.setUsername("root");
-		bds.setPassword("root");
+		bds.setPassword("p@ssword");
 		
 		return bds.getConnection();
 		

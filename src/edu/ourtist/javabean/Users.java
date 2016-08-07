@@ -1,17 +1,21 @@
 package edu.ourtist.javabean;
 
-public class Users {
+import java.io.Serializable;
+
+public class Users implements Serializable{
 	
 	public static final String TABLE_NAME = "users";
 	public static final String USER_NAME = "user_name";
 	public static final String PASSWORD = "password";
 	public static final String EMAIL_ADDRESS = "email_address";
 	public static final String ID_USERS = "idusers"; 
+	public static final String MEMBERSHIP = "membership";
 	
 	private int idusers;
 	private String user_name;
 	private String password;
 	private String email_address;
+	private int membership;
 	
 	public int getIdusers() {
 		return idusers;
@@ -36,6 +40,12 @@ public class Users {
 	}
 	public void setEmail_address(String email_address) {
 		this.email_address = email_address;
+	}
+	public int getMembership() {
+		return membership;
+	}
+	public void setMembership(int membership) {
+		this.membership = membership;
 	}
 	
 	
