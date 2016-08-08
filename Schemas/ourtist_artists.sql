@@ -1,10 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `ourtist` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `ourtist`;
--- MySQL dump 10.13  Distrib 5.6.17, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: ourtist
+-- Host: localhost    Database: ourtist
 -- ------------------------------------------------------
--- Server version	5.6.21-log
+-- Server version	5.7.13-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -53,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-08 22:45:25
+-- Dump completed on 2016-08-09  3:57:03

@@ -1,10 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `ourtist` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `ourtist`;
--- MySQL dump 10.13  Distrib 5.6.17, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: ourtist
+-- Host: localhost    Database: ourtist
 -- ------------------------------------------------------
--- Server version	5.6.21-log
+-- Server version	5.7.13-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -31,7 +29,7 @@ CREATE TABLE `users` (
   `email_address` tinytext,
   `membership` int(11) DEFAULT '0',
   PRIMARY KEY (`idusers`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +38,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'E@YAHOO.COM','P@SSword','edafw',0),(2,'afa','asfa','sf',0),(3,'ede','dwdew','weewd',0),(4,'afa','afdasd','asdfafa',0),(5,'fafd','dfs','fa',0),(6,'afasd','asfsafa','asfasfs',0),(7,'afasd','asfsafa','asfasfs',0),(8,'afsddasf','asdfafa','asdfafasfsfaf',0),(9,'dfcfhfg','ghfdghdhg','dghdjgfjh',0),(10,'vadfasf','asdfa','asdfasdfa',0),(11,'asdfasf','afasdfsdf','afasdfsdfaffdsf',0),(12,'afdaf','asfaf','asfasdfs',0),(13,'fdasfasd','sfdasfa','afsafs',0),(14,'fafd','fasdfda','asfasdf',0);
+INSERT INTO `users` VALUES (1,'E@YAHOO.COM','P@SSword','edafw',0),(2,'afa','asfa','sf',0),(3,'ede','dwdew','weewd',0),(4,'afa','afdasd','asdfafa',0),(5,'fafd','dfs','fa',0),(6,'afasd','asfsafa','asfasfs',0),(7,'afasd','asfsafa','asfasfs',0),(8,'afsddasf','asdfafa','asdfafasfsfaf',0),(9,'dfcfhfg','ghfdghdhg','dghdjgfjh',0),(10,'vadfasf','asdfa','asdfasdfa',0),(11,'asdfasf','afasdfsdf','afasdfsdfaffdsf',0),(12,'afdaf','asfaf','asfasdfs',0),(13,'fdasfasd','sfdasfa','afsafs',0),(14,'fafd','fasdfda','asfasdf',0),(15,'admin','admin','admin',1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-08 22:45:25
+-- Dump completed on 2016-08-09  3:57:03
