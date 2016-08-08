@@ -1,14 +1,12 @@
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
 <head>
-	<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
- 	<link rel="stylesheet" href="css/admin-style.css">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/admin-style.css">
 	<link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap-theme.min.css">
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<% if(session.getAttribute("name") == null){
 		response.sendRedirect("AdminLogin.jsp");
 		return;	
@@ -17,12 +15,8 @@
 	%>
 </head>
 <body>
-	
-	Hello ${name }
-	
-	
-		<div id="header">
-			<div class="logo"><a href="#">AdminPanel</a></div>
+<div id="header">
+			
 	</div>
 	<div class="container-fluid body">
 		
@@ -41,14 +35,42 @@
                 </li>
                 <li>
                     <a href="AdminLogoutServlet">LogOut</a>
-                </li>                
-            </ul>	
+                </li>
+                
+            </ul>
+				
+				
 			</div>
 			<div class="col-md-10 col-xs-10 right-side">
+			
+			<table>
+				<tr>
+					<th>ID Users</th>
+					<th>Username</th>
+					<th>Password</th>
+					<th>Email</th>
+					<th>Membersip</th>
+				</tr>
+				<c:forEach items = "${userlist }" var ="u">
+					<tr>
+						<td>${u.idusers }</td>
+						<td>${u.user_name }</td>
+						<td>${u.password }</td>
+						<td>${u.email_address }</td>
+						<td>${u.membership }</td>
+					</tr>
+				</c:forEach>
+			
+			
+			</table>
+				
+			
+			
 			</div>
-	</div>
-</div>
-	
 		
+		</div>
+		
+		
+	</div>
 </body>
 </html>
