@@ -1,4 +1,4 @@
-package admin.ourtist.servlets;
+package edu.ourtist.servlets;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class AdminLogoutServlet
+ * Servlet implementation class LogoutServlet
  */
-@WebServlet("/AdminLogoutServlet")
-public class AdminLogoutServlet extends HttpServlet {
+@WebServlet("/LogoutServlet")
+public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AdminLogoutServlet() {
+    public LogoutServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,7 +28,7 @@ public class AdminLogoutServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("AdminLogin.jsp").forward(request, response);
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 		HttpSession session = request.getSession();
 		session.invalidate();
 	}
