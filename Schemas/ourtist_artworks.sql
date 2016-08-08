@@ -18,30 +18,29 @@ USE `ourtist`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `users`
+-- Table structure for table `artworks`
 --
 
-DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `artworks`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `users` (
-  `idusers` int(11) NOT NULL AUTO_INCREMENT,
-  `user_name` tinytext,
-  `password` tinytext,
-  `email_address` tinytext,
-  `membership` int(11) DEFAULT '0',
-  PRIMARY KEY (`idusers`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+CREATE TABLE `artworks` (
+  `idartworks` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `description` text,
+  `artist` varchar(45) DEFAULT NULL,
+  `likes` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idartworks`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `artworks`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'E@YAHOO.COM','P@SSword','edafw',0),(2,'afa','asfa','sf',0),(3,'ede','dwdew','weewd',0),(4,'afa','afdasd','asdfafa',0),(5,'fafd','dfs','fa',0),(6,'afasd','asfsafa','asfasfs',0),(7,'afasd','asfsafa','asfasfs',0),(8,'afsddasf','asdfafa','asdfafasfsfaf',0),(9,'dfcfhfg','ghfdghdhg','dghdjgfjh',0),(10,'vadfasf','asdfa','asdfasdfa',0),(11,'asdfasf','afasdfsdf','afasdfsdfaffdsf',0),(12,'afdaf','asfaf','asfasdfs',0),(13,'fdasfasd','sfdasfa','afsafs',0),(14,'fafd','fasdfda','asfasdf',0);
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+LOCK TABLES `artworks` WRITE;
+/*!40000 ALTER TABLE `artworks` DISABLE KEYS */;
+/*!40000 ALTER TABLE `artworks` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
