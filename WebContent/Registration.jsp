@@ -1,128 +1,170 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html lang="en">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="css/sign_up.css">
-		<script type="text/javascript" src="js/jquery-3.0.0.js"></script>
-		<link rel="stylesheet" href="css/Slider.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script type="text/javascript" src="js/jssor.slider.min.js"></script>
-    <link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap-theme.min.css">
-<script src = "jquery-3.0.0.min.js"></script>
-<title>Insert title here</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Agency - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Theme CSS -->
+    <link href="css/agency.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    
+	<script src = "jquery-3.0.0.min.js"></script>
+     <style>
+        .navbar-custom{
+            background-color: #222;
+        }
+    </style>
+
 </head>
-<header>
-		
-	<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
-        <div class = "container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-              <a href="#" class="navbar-left"></a>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="index.html">OURtist</a>
             </div>
-            <div class="collpase navbar-collapse" id="example">
-                <ul class="nav navbar-nav">
-                    <li><a href="index.html">OURtist</a></li>
-                    <li><a href="index.html"><span class = "glyphicon glyphicon-home"></span></a></li> 
-                    <li><a href="Artworks.html">Artworks</a></li>
-                    <li><a href="Artists.html">Artists</a></li>
-					<li><a href="SubmitForm.html">Submit your art</a></li>
-                    
-                </ul>
-              
-                
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="sign_up.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="paintings2.html">Artworks</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="artist2.html">Artists</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="SubmitForm.html">Submit</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#team">Team</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="login.html">Login</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="sign_up.html">Signup</a>
+                    </li>
                 </ul>
-                
-                  
-                 <form action="" class="navbar-form navbar-right" role="search">
-                    <div class="input-group" id = "searchid">
-                    <input type="text" class="form-control" placeholder = "Search"/>
-                        <span class="input-group-addon">
-                            <i class="fa fa-search"></i>
-                            <a href="Artworks.html"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
-                        </span>
-                    </div>
-                </form>
-               
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-        </div>
-    </div>
-	</header>
-	<body>
-		<br><br><br><br>
+        <!-- /.container-fluid -->
+    </nav>
+    
+    
+	
+		<section id="portfolio" class="bg-light-gray">
         <div class="container">
 				<h1>Sign Up / Register</h1>
 			</div> 
 	
-	<body>
+	
 		<br>
 		
         <div class="container">
-        <!--  <form action = "AddUsersServlet" method = "POST">
-              <fieldset class="form-group">
-                <label for="formGroupExampleInput"></label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Username" name = "user_name">
-              </fieldset>
-              <fieldset class="form-group">
-                <label for="formGroupExampleInput2"></label>
-                <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Password">
-              </fieldset>
-              <fieldset class="form-group">
-                <label for="formGroupExampleInput2"></label>
-                <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Re-type password" name = "password">
-              </fieldset>
-              <fieldset class="form-group">
-                <label for="formGroupExampleInput"></label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="E-mail" name = "email_address">
-              </fieldset>
-             
-         //     <a href = "index.html" input type = "submit" class="btn btn-primary">Register</a>
-        </form>-->
+        <div class = "col-lg-6">
         <form action = "AddUsersServlet" method = "POST">
-		<fieldset class="form-group">
-                <label for="formGroupExampleInput"></label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Username" name = "user_name">
-        </fieldset>
-		<fieldset class="form-group">
-          <label for="formGroupExampleInput2"></label>
-          <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Re-type password" name = "password">
-        </fieldset>
-        <fieldset class="form-group">
-          <label for="formGroupExampleInput"></label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="E-mail" name = "email_address">
-        </fieldset>
-		<input type = "submit" href = "index.html" button type = "submit"class="btn btn-primary"/>
+			<fieldset class="form-group">
+	                <label for="formGroupExampleInput"></label>
+	                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Username" name = "user_name">
+	        </fieldset>
+			<fieldset class="form-group">
+	          <label for="formGroupExampleInput2"></label>
+	          <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Re-type password" name = "password">
+	        </fieldset>
+	        <fieldset class="form-group">
+	          <label for="formGroupExampleInput"></label>
+	          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="E-mail" name = "email_address">
+	        </fieldset>
+			<input type = "submit" href = "index.html" button type = "submit"class="btn btn-primary"/>
 		</form>
+            </div>
     </div>
 	
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    
     <footer>
         <div class="container">
             <div class="row">
-        <hr>
-            <div class="col-lg-12">
-      
-            <div class="col-md-8">
-                <p class="muted pull-right">© 2016 Burugs. All rights reserved</p>
-            </div>
-            </div>
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Ourtist 2016</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-        
-        
+       
     </footer>
+        </section>
+     <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/agency.min.js"></script>
+
 	
 	</body>
-
+		
 
 </html>
