@@ -1,6 +1,7 @@
 package edu.ourtist.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -38,7 +39,7 @@ public class AddUsersServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		PrintWriter out = response.getWriter();
 		Users u = new Users();
 		u.setUser_name(request.getParameter(Users.USER_NAME));
 		u.setPassword(request.getParameter(Users.PASSWORD));
@@ -46,8 +47,12 @@ public class AddUsersServlet extends HttpServlet {
 		UsersService usersService = new UsersService();
 		usersService.addUsers(u);
 		
-		
+		out.println("<script type=\"text/javascript\">");
+		 out.println("alert('Your are now registered in');");
+		 
+		 out.println("</script>");	
 		request.getRequestDispatcher("index.jsp").forward(request, response);
+		
 		
 		
 	}

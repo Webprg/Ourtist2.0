@@ -38,7 +38,7 @@
 </head>
 <body id="page-top" class="index">
 
-	<%-- checks if user is logged in
+	<%
 	String userID = null;
 	Cookie[] cookies = request.getCookies();
 	if(cookies !=null){
@@ -46,8 +46,12 @@
 			if(cookie.getName().equals("user"))
 				userID = cookie.getValue();
 			
-		}
-	}
+		}%>
+	
+	
+	<% } 
+	%>
+	<%-- 
 	if(userID == null){
 		response.sendRedirect("login.html");
 	}
@@ -83,9 +87,18 @@
                     <li>
                         <a href="#team">Team</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="login.html">Login</a>
+                    <%	if(userID != null)
+                    {%>
+	
+					<li>
+                        <a class="page-scroll" href="LogoutServlet">Logout</a>
                     </li>
+	<% }else{%>
+					 <li>
+                        <a class="page-scroll" href="login.jsp">Login</a>
+                    </li>
+	<%}%>
+                   
                     <li>
                         <a class="page-scroll" href="Registration.jsp">Signup</a>
                     </li>

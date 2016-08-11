@@ -47,10 +47,7 @@ public class LoginServlet extends HttpServlet {
 		String pword = request.getParameter("password");
 		
 		if(UsersService.Validate(uname, pword)){
-			
-			
-			  
-	        //session.setAttribute("name",uname); 
+			//session.setAttribute("name",uname); 
 			Cookie cookie = new Cookie("user",uname);
 			cookie.setMaxAge(60*60);
 			response.addCookie(cookie);
