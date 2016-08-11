@@ -71,7 +71,7 @@
                         <a class="page-scroll" href="login.html">Login</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="sign_up.html">Signup</a>
+                        <a class="page-scroll" href="Registration.jsp">Signup</a>
                     </li>
                 </ul>
             </div>
