@@ -38,6 +38,22 @@
 </head>
 <body id="page-top" class="index">
 
+	<%-- checks if user is logged in
+	String userID = null;
+	Cookie[] cookies = request.getCookies();
+	if(cookies !=null){
+		for(Cookie cookie : cookies){
+			if(cookie.getName().equals("user"))
+				userID = cookie.getValue();
+			
+		}
+	}
+	if(userID == null){
+		response.sendRedirect("login.html");
+	}
+	
+	--%>
+
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container">
