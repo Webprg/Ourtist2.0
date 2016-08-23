@@ -7,9 +7,31 @@ public class Artworks {
 	public static final String DESCRIPTION = "description";
 	public static final String LOCATION = "location";
 	public static final String LIKES = "likes";
+	public static final String FILENAME = "filename";
 	public static final String ID_ARTWORKS = "idartworks";
 	
-	private String location;
+	private String filename;
+	
+	public String getFilename() {
+		return filename;
+	}
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+	private String title;
+    public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getImageUrl() {
+		return imageUrl;
+	}
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+	private String imageUrl;
 	
 	public String getLocation() {
 		return location;
@@ -17,6 +39,8 @@ public class Artworks {
 	public void setLocation(String location) {
 		this.location = location;
 	}
+	private String location;
+	
 	private int idartworks;
 	public int getIdartworks() {
 		return idartworks;

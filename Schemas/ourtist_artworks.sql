@@ -1,8 +1,10 @@
--- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `ourtist` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `ourtist`;
+-- MySQL dump 10.13  Distrib 5.6.17, for Win32 (x86)
 --
--- Host: localhost    Database: ourtist
+-- Host: 127.0.0.1    Database: ourtist
 -- ------------------------------------------------------
--- Server version	5.7.13-log
+-- Server version	5.6.21-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -27,12 +29,13 @@ CREATE TABLE `artworks` (
   `name` varchar(45) NOT NULL,
   `description` text,
   `artist` varchar(45) DEFAULT NULL,
-  `likes` int(11) DEFAULT NULL,
-  `idartists` int(11) DEFAULT NULL,
-  PRIMARY KEY (`idartworks`),
-  KEY `idartists` (`idartists`),
-  CONSTRAINT `artworks_ibfk_1` FOREIGN KEY (`idartists`) REFERENCES `artists` (`idartists`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `likes` int(11) DEFAULT '0',
+  `location` varchar(45) DEFAULT NULL,
+  `file_location` varchar(1000) DEFAULT NULL,
+  `filename` varchar(45) DEFAULT NULL,
+  `isapprov` int(11) DEFAULT '0',
+  PRIMARY KEY (`idartworks`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,6 +44,7 @@ CREATE TABLE `artworks` (
 
 LOCK TABLES `artworks` WRITE;
 /*!40000 ALTER TABLE `artworks` DISABLE KEYS */;
+INSERT INTO `artworks` VALUES (1,'n,mn,n','gccghf','kkjbkjb',0,'Marikina',NULL,'Art3.jpg',0),(2,'ffsda','sadfasd','safaf',0,'Manila',NULL,'Art2.jpg',0),(3,'affa','saa','asf',0,'Makati',NULL,'image2.png',0),(4,'fafa','affas','afa',0,'afasfsad',NULL,'image1.jpg',0);
 /*!40000 ALTER TABLE `artworks` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-09  3:57:02
+-- Dump completed on 2016-08-24  1:10:40
