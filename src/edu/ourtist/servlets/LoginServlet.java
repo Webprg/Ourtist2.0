@@ -41,17 +41,17 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpSession session=request.getSession();
+		
 		PrintWriter out = response.getWriter();
 		String uname = request.getParameter("username");
 		String pword = request.getParameter("password");
 		
 		if(UsersService.Validate(uname, pword)){
-			//session.setAttribute("name",uname); 
-			Cookie cookie = new Cookie("user",uname);
-			cookie.setMaxAge(60*60);
+			Cookie cookie = new Cookie("LoggedUser",uname);
+			cookie.setMaxAge(60*60*60);
 			response.addCookie(cookie);
-			request.getRequestDispatcher("index.jsp").forward(request, response);
+			response.sendRedirect("index.jsp");
+			
 	        
 		}
 		else{

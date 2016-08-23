@@ -1,8 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 
@@ -13,9 +10,7 @@
     <meta name="author" content="">
 
     <title>Agency - Start Bootstrap Theme</title>
-	
-	<script src = "jquery-3.0.0.min.js"></script>
-	
+
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -35,11 +30,12 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style>
+     <style>
         .navbar-custom{
             background-color: #222;
         }
     </style>
+
 </head>
 
 <body id="page-top" class="index">
@@ -52,23 +48,23 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="index.jsp">OURtist</a>
+                <a class="navbar-brand page-scroll" href="index.html">OURtist</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                   <li class="hidden">
+                    <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="DisplayArtworksServlet">Artworks</a>
+                        <a class="page-scroll" href="paintings2.html">Artworks</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="DisplayArtistsServlet">Artists</a>
+                        <a class="page-scroll" href="artist2.html">Artists</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="SubmitForm.html">Submit</a>
+                        <a class="page-scroll" href="sign_up.html">Submit</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#team">Team</a>
@@ -77,7 +73,7 @@
                         <a class="page-scroll" href="login.html">Login</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="Registration.jsp">Signup</a>
+                        <a class="page-scroll" href="sign_up.html">Signup</a>
                     </li>
                 </ul>
             </div>
@@ -86,46 +82,73 @@
         <!-- /.container-fluid -->
     </nav>
     
-    
     <section id="portfolio" class="bg-light-gray">
-        <div class="container">
-        <h1>Artists</h1>
-			</div>
-    <br><br>
-    <div class="container">
-      <div class="row">
-            <div class="col-md-7">
-                <a href="#">
-                    <img class="img-responsive" src="img/portfolio/Juan.jpg" alt="" style="min-height:50px;height:300px; min-width: 20px;width:700px;">
-                </a>
+    <div class = "container">
+            <div class = "col-md-8">
+                <div class = "panel panel-default">
+                    <div class = "panel-heading">Waves</div>
+                    <div class = "panel-body">
+                        <img src = "img/portfolio/art1.jpg" alt="" id = "image">
+                    </div>
+                </div>
             </div>
-            <div class="col-md-5">
-                <h3 >Featured Artist</h3>
-                <h4>Artist Name</h4>
-                <p>Description of Artist.</p>
-            </div>
-      </div>
-      <br>
-      <div class="row">
-        <c:forEach items = "${artistslists}" var = "a">
-			<div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <img src="images/Art4.jpg" alt="Painting" style="min-height:50px;height:166px; min-width: 20px;width:450px;">
-            <div class="caption">
-              <h3 style = "margin:3px; text-align:center;width:100%">${a.name} <br></h3>
-              <p style = "margin:3px; text-align:center;width:100%">${a.phone_number}<br>
-			${a.info}<br>
-			${a.views}<br> <br> <br></p>
-            </div>
-          </div>
-        </div>
+            <div class = "col-md-4">
+                <div class = "panel-group" id = "accordion">
+                    <div class="panel panel-default">
+                        <div class = "panel-heading">
+                            <h4 class="panel-title">
+                                <a href = "#collapseone" data-toggle = "collapse" data-parent = "accordion">Description</a>
+                            </h4>
+                        </div>
+                        <div id="collapseone" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                the quick brown fox jumps over the lazy dog.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                    <div class="panel panel-default">
+                        <div class = "panel-heading">
+                            <h4 class="panel-title">
+                                <a href = "#collapsetwo" data-toggle = "collapse" data-parent = "accordion">Artist Info</a>
+                            </h4>
+                        </div>
+                        <div id="collapsetwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                the quick brown fox jumps over the lazy dog.
+                            </div>
+                        </div>
+                    </div>
+                
+                    <a href = "" class = "btn btn-primary btn-lg"><span class = "glyphicon glyphicon-thumbs-up"></span></a>
+                
+                    <a href = "" class = "btn btn-success btn-lg"><span class = "glyphicon glyphicon-share"></span></a>
 
-		</c:forEach>
-      </div>
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Zoom</button>
+
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog modal-lg">
+                        
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Title</h4>
+                            </div>
+                            <div class="modal-body">
+                              <img src = "img/portfolio/art1.jpg" alt="" id = "image" style="min-height:50px;height:498px; min-width: 20px;width:862px;">
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>       
+                        </div>
+                    </div>
+                
+                </div>
     </div>
-    
-    <br><br><br><br>
-    
+  <br><br><br><br><br>
     <footer>
         <div class="container">
             <div class="row">
@@ -152,6 +175,7 @@
                 </div>
             </div>
         </div>
+       
     </footer>
         
         <!-- jQuery -->

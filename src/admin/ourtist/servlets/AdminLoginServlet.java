@@ -48,12 +48,14 @@ public class AdminLoginServlet extends HttpServlet {
 		
 		if(AdminService.Validate(admin_uname, admin_pword)){
 			
-			request.getRequestDispatcher("Admin.jsp").forward(request, response);
+
 			HttpSession session=request.getSession();  
 	        session.setAttribute("name",admin_uname); 
+			request.getRequestDispatcher("Admin.jsp").forward(request, response);
 	        
 		}
 		else{
+			System.out.println("validated >>");
 			 out.println("<script type=\"text/javascript\">");
 			 out.println("alert('User or password incorrect');");
 			 out.println("location='AdminLogin.jsp';");

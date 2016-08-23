@@ -5,9 +5,18 @@ public class Artworks {
 	public static final String NAME = "name";
 	public static final String ARTISTS = "artist"; 
 	public static final String DESCRIPTION = "description";
+	public static final String LOCATION = "location";
 	public static final String LIKES = "likes";
 	public static final String ID_ARTWORKS = "idartworks";
 	
+	private String location;
+	
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
 	private int idartworks;
 	public int getIdartworks() {
 		return idartworks;

@@ -63,10 +63,10 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="paintings2.html">Artworks</a>
+                        <a class="page-scroll" href="DisplayArtworksServlet">Artworks</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="artist2.html">Artists</a>
+                        <a class="page-scroll" href="DisplayArtistsServlet">Artists</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="SubmitForm.html">Submit</a>
@@ -102,17 +102,17 @@
         <form action = "AddUsersServlet" method = "POST">
 			<fieldset class="form-group">
 	                <label for="formGroupExampleInput"></label>
-	                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Username" name = "user_name">
+	                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Username" name = "user_name" Required>
 	        </fieldset>
 			<fieldset class="form-group">
 	          <label for="formGroupExampleInput2"></label>
-	          <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Re-type password" name = "password">
+	          <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="type password" name = "password" Required>
 	        </fieldset>
 	        <fieldset class="form-group">
 	          <label for="formGroupExampleInput"></label>
-	          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="E-mail" name = "email_address">
+	          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="E-mail" name = "email_address" Required>
 	        </fieldset>
-			<input type = "submit" href = "index.html" button type = "submit"class="btn btn-primary"/>
+			<input type = "submit" href = "index.jsp" button type = "submit"class="btn btn-primary"/>
 		</form>
             </div>
     </div>

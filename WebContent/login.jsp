@@ -38,9 +38,14 @@
         }
     </style>
     
-    
+    <c:forEach items="${cookie}" var="IdCookie">
+     <c:if test="${IdCookie.key == 'LoggedUser'}">
+     	<c:set var="ifloggedin" value="true"/>
+     </c:if>
+     </c:forEach>
     
 </head>
+<
 <body id="page-top" class="index">
 	
     <!-- Navigation -->
@@ -61,10 +66,10 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="paintings2.html">Artworks</a>
+                        <a class="page-scroll" href="DisplayArtworksServlet">Artworks</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="artist2.html">Artists</a>
+                        <a class="page-scroll" href="DisplayArtistsServlet">Artists</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="SubmitForm.html">Submit</a>
@@ -72,6 +77,11 @@
                     <li>
                         <a class="page-scroll" href="#team">Team</a>
                     </li>
+                    <c:if test="${ifloggedin == 'true'}">
+	     				<li>
+	                        <a class="page-scroll" href="LogoutServlet">Logout</a>
+	                    </li>
+					 </c:if>
                     <li>
                         <a class="page-scroll" href="login.jsp">Login</a>
                     </li>

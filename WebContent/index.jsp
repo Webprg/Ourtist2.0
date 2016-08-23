@@ -33,31 +33,19 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+    <c:set var="ifloggedin" value="false"/>
+	
+	<c:forEach items="${cookie}" var="IdCookie">
+     <c:if test="${IdCookie.key == 'LoggedUser'}">
+     	<c:set var="ifloggedin" value="true"/>
+     		<% System.out.println(pageContext.findAttribute("ifloggedin")); %>
+     </c:if>
+     </c:forEach>
     
 </head>
 <body id="page-top" class="index">
-
-	<%
-	String userID = null;
-	Cookie[] cookies = request.getCookies();
-	if(cookies !=null){
-		for(Cookie cookie : cookies){
-			if(cookie.getName().equals("user"))
-				userID = cookie.getValue();
-			
-		}%>
 	
-	
-	<% } 
-	%>
-	<%-- 
-	if(userID == null){
-		response.sendRedirect("login.html");
-	}
-	
-	--%>
-
+	<% System.out.println(pageContext.findAttribute("ifloggedin")); %>
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container">
@@ -76,28 +64,29 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="paintings2.html">Artworks</a>
+                        <a class="page-scroll" href="DisplayArtworksServlet">Artworks</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="artist2.html">Artists</a>
+                        <a class="page-scroll" href="DisplayArtistsServlet">Artists</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="SubmitForm.html">Submit</a>
+                        <a class="page-scroll" href="SubmitForm2.html">Submit</a>
                     </li>
                     <li>
                         <a href="#team">Team</a>
                     </li>
-                    <%	if(userID != null)
-                    {%>
+                    
+					<c:if test="${ifloggedin == 'true'}">
+						
+	     				<li>
+	                        <a class="page-scroll" href="LogoutServlet">Logout</a>
+	                    </li>
+					 </c:if>
 	
-					<li>
-                        <a class="page-scroll" href="LogoutServlet">Logout</a>
-                    </li>
-	<% }else{%>
 					 <li>
                         <a class="page-scroll" href="login.jsp">Login</a>
                     </li>
-	<%}%>
+	
                    
                     <li>
                         <a class="page-scroll" href="Registration.jsp">Signup</a>

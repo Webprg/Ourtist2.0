@@ -17,11 +17,7 @@
 	%>
 </head>
 <body>
-	
-	Hello ${name }
-	
-	
-		<div id="header">
+	<div id="header">
 			<div class="logo"><a href="#">AdminPanel</a></div>
 	</div>
 	<div class="container-fluid body">

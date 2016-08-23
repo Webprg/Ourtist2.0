@@ -49,7 +49,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="index.html">OURtist</a>
+                <a class="navbar-brand page-scroll" href="index.jsp">OURtist</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -59,10 +59,10 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="paintings2.html">Artworks</a>
+                        <a class="page-scroll" href="DisplayArtworksServlet">Artworks</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="artist2.html">Artists</a>
+                        <a class="page-scroll" href="DisplayArtistsServlet">Artists</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="SubmitForm.html">Submit</a>
@@ -74,7 +74,7 @@
                         <a class="page-scroll" href="login.html">Login</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="sign_up.html">Signup</a>
+                        <a class="page-scroll" href="Registration.jsp">Signup</a>
                     </li>
                 </ul>
             </div>

@@ -44,6 +44,7 @@ public class ArtworksService {
 				a.setName(rs.getString(Artworks.NAME));
 				a.setArtists(rs.getString(Artworks.ARTISTS));
 				a.setDescription(rs.getString(Artworks.DESCRIPTION));
+				a.setLocation(rs.getString(Artworks.LOCATION));
 				a.setLikes(rs.getInt(Artworks.LIKES));
 				a.setIdartworks(rs.getInt(Artworks.ID_ARTWORKS));
 				artworkslists.add(a);

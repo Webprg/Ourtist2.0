@@ -29,13 +29,12 @@ public class LogoutServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("index.jsp").forward(request, response);
-		//HttpSession session = request.getSession();
-		//session.invalidate();
-		Cookie[] cookies = request.getCookies();
-		for (Cookie cookie : cookies) {
-			cookie.setMaxAge(0);
-		}
+		
+		
+		Cookie ck=new Cookie("LoggedUser","");  
+        ck.setMaxAge(0);  
+        response.addCookie(ck); 
+        response.sendRedirect("index.jsp");
 	}
 
 	/**
