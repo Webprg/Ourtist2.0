@@ -28,17 +28,21 @@
                         <a class="page-scroll" href="SubmitForm2.html">Submit</a>
                     </li>
                     
-                    
-					<c:if test="${param.ifloggedin == 'true'}">				
+                    <c:choose>
+						
+					 <c:when test="${param.ifloggedin == 'true'}">			
 	     				<li>
 	                        <a class="page-scroll" href="LogoutServlet">Logout</a>
 	                    </li>
-					 </c:if>
-					<c:if test="${param.ifloggedin == 'false'}">		
+	                    </c:when>
+					 
+					 
+					 <c:otherwise>		
 					 <li>
                         <a class="page-scroll" href="login.jsp">Login</a>
                     </li>
-					</c:if>
+					</c:otherwise>
+					</c:choose>
                    
                     <li>
                         <a class="page-scroll" href="Registration.jsp">Signup</a>
