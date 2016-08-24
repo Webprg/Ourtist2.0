@@ -120,49 +120,51 @@ public class ArtworksService {
 		
 		return artworkslists;
 	}
-	
-	public void addArtworks(Artworks a){
 		
-		String sql = "INSERT INTO " + Artworks.TABLE_NAME + " ("
-				+ Artworks.NAME + ","
-				+ Artworks.ARTISTS + ","
-				+ Artworks.DESCRIPTION + ","
-				+ Artworks.LOCATION + ","
-				+ Artworks.FILENAME + ")"
-				+ "VALUES (?,?,?,?,?)";
+	public ArrayList getArtWork(int id){
+		ArrayList<Artworks> artwork = new ArrayList<>();
+		
+		String sql = "SELECT * FROM " + Artworks.TABLE_NAME + " WHERE " + Artworks.ID_ARTWORKS + " = " + id;
+		
+		BasicDataSource bds = new BasicDataSource();
+		bds.setDriverClassName("com.mysql.jdbc.Driver");
+		bds.setUrl("jdbc:mysql://localhost:3306/ourtist");
+		bds.setUsername("root");
+		bds.setPassword("p@ssword");
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		try{
-			conn = DBManager.getConnection();
+		ResultSet rs = null;
+		try {
+			conn = bds.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, a.getName());
-			pstmt.setString(2, a.getArtists());
-			pstmt.setString(3, a.getDescription());
-			pstmt.setString(4, a.getLocation());
-			pstmt.setString(5, a.getFilename());
-			pstmt.executeUpdate();
-		} catch (SQLException e){
-			e.printStackTrace();			
-		}finally{
+			rs = pstmt.executeQuery();
+			while(rs.next()){
+				//song s = new song();
+				Artworks a = new Artworks();
+				a.setName(rs.getString(Artworks.NAME));
+				a.setArtists(rs.getString(Artworks.ARTISTS));
+				a.setDescription(rs.getString(Artworks.DESCRIPTION));
+				a.setLocation(rs.getString(Artworks.LOCATION));
+				a.setLikes(rs.getInt(Artworks.LIKES));
+				a.setIdartworks(rs.getInt(Artworks.ID_ARTWORKS));
+				artwork.add(a);
+			}
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally{
 			try {
+				rs.close();
+				pstmt.close();
 				conn.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			try {
-				pstmt.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		}
-				
-	}
-	
-	public void uploadImage(Artworks a){
 		
+		return artwork;
 	}
-
 }
