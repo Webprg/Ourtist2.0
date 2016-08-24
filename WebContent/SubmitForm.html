@@ -43,46 +43,9 @@
 <body id="page-top" class="index">
 
     <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="index.html">OURtist</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="paintings2.html">Artworks</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="artist2.html">Artists</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="SubmitForm.html">Submit</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#team">Team</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="login.html">Login</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="sign_up.html">Signup</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
+    <c:import url="navigationbar.jsp">
+  		<c:param name="ifloggedin" value="${ifloggedin}"/>
+	</c:import>
     
         <section id="portfolio" class="bg-light-gray">
         
@@ -93,28 +56,28 @@
     <br><br>
     <div class="container">
         <div class = "col-lg-6">
-        <form>
+        <form action = "AddArtworksServlet" method = "POST" enctype="multipart/form-data">
               <fieldset class="form-group">
-                <label for="formGroupExampleInput">Artist Name</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name">
+                <label for="formGroupExampleInput">Artwork Title</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name" name = "name">
               </fieldset>
               <fieldset class="form-group">
-                <label for="formGroupExampleInput2">Artist Info</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Description">
+                <label for="formGroupExampleInput2">Artist Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Description" name = "artist">
               </fieldset>
               <fieldset class="form-group">
-                <label for="formGroupExampleInput2">Artwork Title</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Title">
+                <label for="formGroupExampleInput2">Artwork Description</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Title" name = "description">
               </fieldset>
               <fieldset class="form-group">
                 <label for="formGroupExampleInput2">Location of Art</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Location">
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Location" name = "location">
               </fieldset>
               <fieldset class="form-group">
                 <label for="exampleInputFile">Upload Art</label>
-                <input type="file" class="form-control-file" id="exampleInputFile">
+                <input type="file" class="form-control-file" id="exampleInputFile" name= "filename">
               </fieldset>
-              <a href = "index.html" button type="submit" class="btn btn-primary">Submit</a>
+              <input type = "submit" a href = "index.jsp" button type="submit" class="btn btn-primary">Submit</a>
         </form>
             </div>
     </div>

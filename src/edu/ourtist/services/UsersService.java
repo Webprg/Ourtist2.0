@@ -12,6 +12,39 @@ import edu.ourtist.javabean.Users;
 
 public class UsersService {
 	
+	public int getSimilarName(String a){
+		ArrayList<Users> usersList = new ArrayList<>();
+		String sql = "SELECT * FROM " + Users.TABLE_NAME + " WHERE " + 
+		Users.USER_NAME + " = " + " ? ";
+		int i = 0;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try{
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, a);
+			System.out.println(pstmt);
+			rs = pstmt.executeQuery();
+			if(rs.next() == true)
+				i=1;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally{
+			try {
+				rs.close();
+				pstmt.close();
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return i;
+	}
+	
 	
 	public void addUsers(Users u){
 		String sql = "INSERT INTO " + Users.TABLE_NAME +" ("

@@ -47,56 +47,9 @@
 	
 	<% System.out.println(pageContext.findAttribute("ifloggedin")); %>
     <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">OURtist</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class=" navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="DisplayArtworksServlet">Artworks</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="DisplayArtistsServlet">Artists</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="SubmitForm2.html">Submit</a>
-                    </li>
-                    <li>
-                        <a href="#team">Team</a>
-                    </li>
-                    
-					<c:if test="${ifloggedin == 'true'}">
-						
-	     				<li>
-	                        <a class="page-scroll" href="LogoutServlet">Logout</a>
-	                    </li>
-					 </c:if>
-					<c:if test="${ifloggedin == 'false'}">
-					 <li>
-                        <a class="page-scroll" href="login.jsp">Login</a>
-                    </li>
-					</c:if>
-                   
-                    <li>
-                        <a class="page-scroll" href="Registration.jsp">Signup</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
+    <c:import url="navigationbar.jsp">
+  		<c:param name="ifloggedin" value="${ifloggedin}"/>
+	</c:import>
 
     <!-- Header -->
     <header>
@@ -123,74 +76,19 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                        </div>
-                        <img src="img/portfolio/art1.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Title</h4>
-                        <p class="text-muted">Author</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                        </div>
-                        <img src="img/portfolio/art2.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Title</h4>
-                        <p class="text-muted">Author</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            
-                        </div>
-                        <img src="img/portfolio/art3.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Title</h4>
-                        <p class="text-muted">Author</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            
-                        </div>
-                        <img src="img/portfolio/art4.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Title</h4>
-                        <p class="text-muted">Author</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                        </div>
-                        <img src="img/portfolio/art5.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Title</h4>
-                        <p class="text-muted">Author</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                        </div>
-                        <img src="img/portfolio/art6.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Title</h4>
-                        <p class="text-muted">Author</p>
-                    </div>
-                </div>
+            	<c:forEach items = "${artworkslists}" var = "a">
+	                <div class="col-md-4 col-sm-6 portfolio-item">
+	                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+	                        <div class="portfolio-hover">
+	                        </div>
+	                        <img src="images/${a.filename}" class="img-responsive" alt="" style="min-height:50px;height:300px; min-width: 20px;width:700px;">
+	                    </a>
+	                    <div class="portfolio-caption">
+	                        <h4>Title: ${a.name}</h4>
+	                        <p class="text-muted">Artist:${a.artists}</p>
+	                    </div>
+	                </div>
+                </c:forEach>
             </div>
         </div>
     </section>

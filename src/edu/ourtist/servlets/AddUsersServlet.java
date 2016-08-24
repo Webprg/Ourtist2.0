@@ -40,19 +40,28 @@ public class AddUsersServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		PrintWriter out = response.getWriter();
-		Users u = new Users();
-		u.setUser_name(request.getParameter(Users.USER_NAME));
-		u.setPassword(request.getParameter(Users.PASSWORD));
-		u.setEmail_address(request.getParameter(Users.EMAIL_ADDRESS));
+		
 		UsersService usersService = new UsersService();
-		usersService.addUsers(u);
+		Users u = new Users();	
+		String n = request.getParameter(Users.USER_NAME);
+		if(usersService.getSimilarName(n) == 1){
+			System.out.println("existsssssssss");
+			request.getRequestDispatcher("Error.html").forward(request, response);
+		}
 		
-		out.println("<script type=\"text/javascript\">");
-		 out.println("alert('Your are now registered in');");
-		 
-		 out.println("</script>");	
-		request.getRequestDispatcher("index.jsp").forward(request, response);
-		
+		else{
+			u.setUser_name(request.getParameter(Users.USER_NAME));
+			u.setPassword(request.getParameter(Users.PASSWORD));
+			u.setEmail_address(request.getParameter(Users.EMAIL_ADDRESS));
+			
+			usersService.addUsers(u);
+			
+			out.println("<script type=\"text/javascript\">");
+			 out.println("alert('Your are now registered in');");
+			 
+			 out.println("</script>");	
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}
 		
 		
 	}
