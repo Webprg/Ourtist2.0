@@ -100,11 +100,15 @@
 		            </div>
 		            <div class="col-md-5">
 		                <h3>${a.name}</h3>
-		                <h4>${a.artists}t</h4>
+		                <h4>${a.artists}</h4>
 		                <p>${a.description} <br>
 		                	location: ${a.location}<br>
 							${a.likes}<br></p>
-		                <a class="btn btn-primary" href="paint.html">View Painting <span class="glyphicon glyphicon-chevron-right"></span></a>
+							
+							<form action="DisplayPaintingServlet" method="GET">
+		                <input type="hidden" name="id" value="${a.idartworks}"/>
+		                <input type="submit" class="btn btn-primary" value="View Painting">
+		                </form>
 		            </div>
 		      	</div>
 		

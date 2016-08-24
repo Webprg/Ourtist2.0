@@ -82,11 +82,11 @@
 	                        <a class="page-scroll" href="LogoutServlet">Logout</a>
 	                    </li>
 					 </c:if>
-	
+					<c:if test="${ifloggedin == 'false'}">
 					 <li>
                         <a class="page-scroll" href="login.jsp">Login</a>
                     </li>
-	
+					</c:if>
                    
                     <li>
                         <a class="page-scroll" href="Registration.jsp">Signup</a>
@@ -258,34 +258,7 @@
 
     
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Ourtist 2016</span>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
-                        </li>
-                        <li><a href="#">Terms of Use</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+    <%@ include file="footer.jsp" %>
     
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>

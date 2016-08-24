@@ -45,7 +45,7 @@
      </c:forEach>
     
 </head>
-<
+
 <body id="page-top" class="index">
 	
     <!-- Navigation -->
@@ -74,9 +74,7 @@
                     <li>
                         <a class="page-scroll" href="SubmitForm.html">Submit</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#team">Team</a>
-                    </li>
+                    
                     <c:if test="${ifloggedin == 'true'}">
 	     				<li>
 	                        <a class="page-scroll" href="LogoutServlet">Logout</a>

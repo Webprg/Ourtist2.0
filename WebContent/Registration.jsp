@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<html>
 
 <head>
 
@@ -40,54 +41,26 @@
             background-color: #222;
         }
     </style>
-
+	
+	<c:forEach items="${cookie}" var="IdCookie">
+     <c:if test="${IdCookie.key == 'LoggedUser'}">
+     	<c:set var="ifloggedin" value="true"/>
+     		<% System.out.println(pageContext.findAttribute("ifloggedin")); %>
+     </c:if>
+     </c:forEach>
+     
 </head>
 
 <body id="page-top" class="index">
 
     <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="index.html">OURtist</a>
-            </div>
+    
+   <c:import url="navigationbar.jsp">
+  		<c:param name="ifloggedin" value="${ifloggedin}"/>
+	</c:import>
+    	
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="DisplayArtworksServlet">Artworks</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="DisplayArtistsServlet">Artists</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="SubmitForm.html">Submit</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#team">Team</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="login.html">Login</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="sign_up.html">Signup</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-    
-    
+     
 	
 		<section id="portfolio" class="bg-light-gray">
         <div class="container">
@@ -118,34 +91,7 @@
     </div>
 	
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Ourtist 2016</span>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
-                        </li>
-                        <li><a href="#">Terms of Use</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-       
-    </footer>
+    <%@ include file="footer.jsp" %>
         </section>
      <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
