@@ -7,13 +7,23 @@ public class Artists {
 	public static final String INFO = "info";
 	public static final String VIEWS = "views";
 	public static final String ID_ARTISTS = "idartists";
+	public static final String EMAIL_AD = "email_address";
 	
 	private int idartists;
 	private String name;
 	private String phone_number;
 	private String info;
 	private int views;
+	private String email_address;
 	
+	public String getEmail_address() {
+		return email_address;
+	}
+
+	public void setEmail_address(String email_address) {
+		this.email_address = email_address;
+	}
+
 	public int getIdartists() {
 		return idartists;
 	}

@@ -10,12 +10,12 @@
 		<link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap-theme.min.css">
 		
-		<style>
+	<!--	<style>
 			body{
 				background-color:#27ae60;
 				
 			}
-			.container{
+			 .container{
 				width:500px;
 				height:200px;
 				 position: relative;
@@ -23,12 +23,13 @@
   				transform: translateY(-50%);
 				
 			}
+			
 		
 			.jumbotron li{
 				list-style-type: none;
 			}
 		
-		</style>
+		</style>  -->
 		
 
 </head>

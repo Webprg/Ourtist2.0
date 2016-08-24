@@ -30,10 +30,10 @@
                     <a href="AdminUsersServlet">Users</a>
                 </li>
                 <li>
-                    <a href="#">Arts</a>
+                    <a href="AdminArtworksServlet">Arts</a>
                 </li>
                 <li>
-                    <a href="#">Votes</a>
+                    <a href="AdminArtistServlet">Artist</a>
                 </li>
                 <li>
                     <a href="AdminLogoutServlet">LogOut</a>

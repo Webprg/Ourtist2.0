@@ -58,7 +58,6 @@ public class AdminService {
 				while(rs.next()){
 					Users s = new Users();
 					s.setEmail_address(rs.getString(Users.EMAIL_ADDRESS));
-					s.setIdusers(rs.getInt(Users.ID_USERS));
 					s.setMembership(rs.getInt(Users.MEMBERSHIP));
 					s.setPassword(rs.getString(Users.PASSWORD));
 					s.setUser_name(rs.getString(Users.USER_NAME));

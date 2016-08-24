@@ -11,8 +11,45 @@ import edu.ourtist.javabean.Artworks;
 import edu.ourtist.javabean.Like;
 
 public class LikeService {
-
-	
+			public void addentry(String uname, int idart){
+				String sql = "INSERT INTO ourtist.like (username, idartwork, isliked ) VALUES (?,?,1)";
+				Connection conn = null;
+				PreparedStatement pstmt = null;
+				
+				try {
+					conn = DBManager.getConnection();
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, uname);
+					pstmt.setInt(2, idart);
+					pstmt.executeUpdate();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+			public boolean checkifexist(String uname,int idart){
+			String sql ="SELECT * FROM ourtist.like WHERE username= ? and idartwork= ? ";
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			boolean x = false;
+			try {
+				conn = DBManager.getConnection();
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, uname);
+				pstmt.setInt(2, idart);
+				ResultSet rs = pstmt.executeQuery();
+				x = rs.next();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+				System.out.println(x);
+				return x;
+			}
+			
+			
+			
 			public boolean isLiked(String uname,int idart){
 			boolean st = false;
 			int x = 0;

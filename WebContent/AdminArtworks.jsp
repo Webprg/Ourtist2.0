@@ -68,18 +68,20 @@
 			<table>
 				<tr>
 					
-					<th>Username</th>
-					<th>Password</th>
-					<th>Email</th>
-					<th>Membersip</th>
+					<th>ID ARTWORKS</th>
+					<th>NAME</th>
+					<th>ARTIST</th>
+					<th>DESCRIPTION</th>
+					<th>LOCATION</th>
 				</tr>
-				<c:forEach items = "${userlist }" var ="u">
+				<c:forEach items = "${artworklist }" var ="u">
 					<tr>
 						
-						<td>${u.user_name }</td>
-						<td>${u.password }</td>
-						<td>${u.email_address }</td>
-						<td>${u.membership }</td>
+						<td>${u.idartworks }</td>
+						<td>${u.name }</td>
+						<td>${u.artists }</td>
+						<td>${u.description }</td>
+						<td>${u.location }</td>
 					</tr>
 				</c:forEach>
 			

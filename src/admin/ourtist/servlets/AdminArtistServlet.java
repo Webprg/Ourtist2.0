@@ -1,28 +1,30 @@
 package admin.ourtist.servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import admin.ourtist.services.AdminService;
+import edu.ourtist.javabean.Artists;
+import edu.ourtist.javabean.Artworks;
+import edu.ourtist.services.ArtistsService;
+import edu.ourtist.services.ArtworksService;
 
 /**
- * Servlet implementation class AdminLoginServlet
+ * Servlet implementation class AdminArtistServlet
  */
-@WebServlet("/AdminLoginServlet")
-public class AdminLoginServlet extends HttpServlet {
+@WebServlet("/AdminArtistServlet")
+public class AdminArtistServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AdminLoginServlet() {
+    public AdminArtistServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,7 +34,10 @@ public class AdminLoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		ArtistsService artistservice = new ArtistsService();
+		ArrayList<Artists> artistlist = artistservice.getAllArtists();
+		request.setAttribute("artistlist", artistlist);
+		request.getRequestDispatcher("AdminArtist.jsp").forward(request, response);
 	}
 
 	/**
@@ -40,30 +45,7 @@ public class AdminLoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		PrintWriter out = response.getWriter();
-		
-		
-		String admin_uname = request.getParameter("username");
-		String admin_pword = request.getParameter("password");
-		
-		if(AdminService.Validate(admin_uname, admin_pword)){
-			
-
-			HttpSession session=request.getSession();  
-	        session.setAttribute("name",admin_uname); 
-			request.getRequestDispatcher("Admin.jsp").forward(request, response);
-	        
-		}
-		else{
-			
-			 out.println("<script type=\"text/javascript\">");
-			 out.println("alert('User or password incorrect');");
-			 out.println("location='AdminLogin.jsp';");
-			 out.println("</script>");
-		}
-			
-		
-		
+		doGet(request, response);
 	}
 
 }

@@ -48,21 +48,29 @@ public class VoteServlet extends HttpServlet {
 				ArtworksService ArtworksService = new ArtworksService();
 				String uname = request.getParameter("username");
 				String idart = request.getParameter("idartwork");
-				System.out.println(uname);
-				System.out.println(idart);
+				
 				if(lk.isLiked(uname, Integer.parseInt(idart)) == false){
+					//check if db exist for the user
+					if(lk.checkifexist(uname, Integer.parseInt(idart)) == false){
+							System.out.println("no entry found");
+							lk.addentry(uname, Integer.parseInt(idart));
+							ArtworksService.addVote(Integer.parseInt(idart));
+					}else{
 					//add vote and update isvote
+						System.out.println(" entry found");
 					ArtworksService.addVote(Integer.parseInt(idart));
 					lk.dolike(uname, Integer.parseInt(idart));
+					}
 				}else{
+					System.out.println("HAPPY BIRHTDAY");
 					   out.println("<script type=\"text/javascript\">");
 					   out.println("alert('You Already Voted');");
 					   out.println("location='DisplayArtworksServlet';");
 					   out.println("</script>");
 				}
 				
-				request.getRequestDispatcher("DisplayArtworksServlet").forward(request,response);
 				
+				response.sendRedirect("DisplayArtworksServlet");
 			 //3. if steps 1 and 2 passed add votes to the db artwork
 			 //4. update user is liked in db  -->
 		

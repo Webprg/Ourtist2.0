@@ -36,13 +36,7 @@ public class ArtistsService {
 			while(rs.next()){
 				//song s = new song();
 				Artists a = new Artists();
-				//String title = rs.getString(song.COLUMN_TITLE);
-				//s.setTitle(title);
-				//s.setArtist(rs.getString(song.COLUMN_ARTIST));
-				//s.setGenre(rs.getString(song.COLUMN_GENRE));
-				//s.setTrackNum(rs.getInt(song.COLUMN_TRACKNUM));
-				//s.setIdsong(rs.getInt(song.COLUMN_IDSONG));
-				//songs.add(s);
+				a.setEmail_address(rs.getString(Artists.EMAIL_AD));
 				a.setName(rs.getString(Artists.NAME));
 				a.setPhone_number(rs.getString(Artists.PHONE_NUMBER));
 				a.setInfo(rs.getString(Artists.INFO));
