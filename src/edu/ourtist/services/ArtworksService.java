@@ -167,4 +167,46 @@ public class ArtworksService {
 		
 		return artwork;
 	}
+	
+	public void addArtworks(Artworks a){
+		
+		String sql = "INSERT INTO " + Artworks.TABLE_NAME + " ("
+				+ Artworks.NAME + ","
+				+ Artworks.ARTISTS + ","
+				+ Artworks.DESCRIPTION + ","
+				+ Artworks.LOCATION + ","
+				+ Artworks.FILENAME + ")"
+				+ "VALUES (?,?,?,?,?)";
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try{
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, a.getName());
+			pstmt.setString(2, a.getArtists());
+			pstmt.setString(3, a.getDescription());
+			pstmt.setString(4, a.getLocation());
+			pstmt.setString(5, a.getFilename());
+			pstmt.executeUpdate();
+		} catch (SQLException e){
+			e.printStackTrace();			
+		}finally{
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			try {
+				pstmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+				
+	}
+	
+	
 }
