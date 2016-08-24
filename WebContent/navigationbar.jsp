@@ -47,6 +47,15 @@
                     <li>
                         <a class="page-scroll" href="Registration.jsp">Signup</a>
                     </li>
+                    <form action="SearchArtworksServlet" class="navbar-form navbar-right" role="search">
+						<div class="input-group" id = "searchid">
+						<input type="text" class="form-control" placeholder = "Search" name = "name"/>
+							<span class="input-group-addon">
+							  <!--  <i class="fa fa-search"></i> -->
+								<input type = "submit" href="Artworks.html"></span></a>
+							</span>
+						</div>
+					</form>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
