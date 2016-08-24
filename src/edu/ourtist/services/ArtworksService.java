@@ -16,9 +16,10 @@ public class ArtworksService {
 	
 	public ArrayList getSelectedArtworks(Artworks a){
 		ArrayList<Artworks> artworkslists = new ArrayList<>();
-		String sql = "SELECT * FROM" + Artworks.TABLE_NAME + " WHERE " + 
-		Artworks.NAME + " LIKE" + " \"?\" ";
-		
+		String sql = "SELECT * FROM " + Artworks.TABLE_NAME + " WHERE " + 
+		Artworks.NAME + " LIKE" + " ? ";
+		String what;
+		System.out.println(a.getName());
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -27,7 +28,9 @@ public class ArtworksService {
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, a.getName());
+			what = "%" + a.getName() + "%";
+			pstmt.setString(1, what);
+			System.out.println(pstmt);
 			rs = pstmt.executeQuery();
 			while(rs.next()){
 				//song s = new song();
