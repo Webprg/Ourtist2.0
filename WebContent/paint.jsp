@@ -39,8 +39,9 @@
     
 	<c:forEach items="${cookie}" var="IdCookie">
      <c:if test="${IdCookie.key == 'LoggedUser'}">
+     	<c:set var="uname1" value="${IdCookie.value.value}" />
      	<c:set var="ifloggedin" value="true"/>
-     		<% System.out.println(pageContext.findAttribute("ifloggedin")); %>
+     		<%-- System.out.println(pageContext.findAttribute("uname1")); --%>
      </c:if>
      </c:forEach>
      
@@ -94,11 +95,17 @@
                             </div>
                         </div>
                     </div>
-                
-                    <a href = "" class = "btn btn-primary btn-lg"><span class = "glyphicon glyphicon-thumbs-up"></span></a>
-                
+               			 <form action="VoteServlet" method="POST">
+                    
+                    	<input type="hidden" value="${uname1}"   name="username">
+                    	
+                    	<input type="hidden" value="${artwork[0].idartworks}" name="idartwork">
+                    	
+                    	<input type="submit" class="btn btn-primary btn-lg" value="like">
+                    	
+                		</form>
                     <a href = "" class = "btn btn-success btn-lg"><span class = "glyphicon glyphicon-share"></span></a>
-
+					
                     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Zoom</button>
 
                     <div class="modal fade" id="myModal" role="dialog">

@@ -113,6 +113,7 @@ public class UsersService {
 			pstmt.setInt(3, 0);
 			ResultSet rs =pstmt.executeQuery();
 			st = rs.next();
+			System.out.println("Wawaka" + st);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

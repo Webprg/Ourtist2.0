@@ -33,15 +33,8 @@ public class ArtworksService {
 			System.out.println(pstmt);
 			rs = pstmt.executeQuery();
 			while(rs.next()){
-				//song s = new song();
+				
 				Artworks ab = new Artworks();
-				//String title = rs.getString(song.COLUMN_TITLE);
-				//s.setTitle(title);
-				//s.setArtist(rs.getString(song.COLUMN_ARTIST));
-				//s.setGenre(rs.getString(song.COLUMN_GENRE));
-				//s.setTrackNum(rs.getInt(song.COLUMN_TRACKNUM));
-				//s.setIdsong(rs.getInt(song.COLUMN_IDSONG));
-				//songs.add(s);
 				ab.setName(rs.getString(Artworks.NAME));
 				ab.setArtists(rs.getString(Artworks.ARTISTS));
 				ab.setDescription(rs.getString(Artworks.DESCRIPTION));
@@ -166,5 +159,32 @@ public class ArtworksService {
 		}
 		
 		return artwork;
+	}
+	
+	public void addVote(int id){
+		String sql = "UPDATE " + Artworks.TABLE_NAME + " SET likes = likes + 1 WHERE idartworks = ? ";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+			
+		
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1,id);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				
+				pstmt.close();
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
 	}
 }

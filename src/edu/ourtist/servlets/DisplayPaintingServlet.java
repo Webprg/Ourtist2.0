@@ -31,11 +31,12 @@ public class DisplayPaintingServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub	
 		int idartwork = Integer.parseInt(request.getParameter("id"));
 		ArtworksService ArtworksService = new ArtworksService();
 		ArrayList<Artworks> artworks = ArtworksService.getArtWork(idartwork);
 		request.setAttribute("artwork", artworks);
+		request.setAttribute("id", idartwork);
 		request.getRequestDispatcher("paint.jsp").forward(request,response);
 		
 	}

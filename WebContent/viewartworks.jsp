@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -39,57 +39,16 @@
     </style>   
 </head>
 
+
+
 <body id="page-top" class="index">
 
-    <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="index.html">OURtist</a>
-            </div>
+	
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                    	<form action="SearchArtworksServlet" class="navbar-form navbar-right" role="search" method = "POST">
-		                    <div class="input-group" id = "searchid">
-		                    <input type="text" class="form-control" placeholder = "Search" name = "name"/>
-		                        <input type = "submit" href = "index.html" button type = "submit"class="btn btn-primary"/>
-		                    </div>
-		                </form>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="paintings2.html">Artworks</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="artist2.html">Artists</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="SubmitForm.html">Submit</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#team">Team</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="login.html">Login</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="sign_up.html">Signup</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
+    <!-- Navigation -->
+    <c:import url="navigationbar.jsp">
+  		<c:param name="ifloggedin" value="${ifloggedin}"/>
+	</c:import>
     
     
     

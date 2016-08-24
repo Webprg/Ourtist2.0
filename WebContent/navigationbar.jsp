@@ -19,6 +19,16 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
+                    	<form action="SearchArtworksServlet" class="navbar-form navbar-right" role="search" method = "POST">
+		                    <div class="input-group" id = "searchid">
+		                    <input type="text" class="form-control" placeholder = "Search" name = "name"/>
+		                        <input type = "submit" href = "index.html" button type = "submit"class="btn btn-primary"/>
+		                    </div>
+		                </form>
+		                
+		                s
+                    </li>
+                    <li>
                         <a class="page-scroll" href="DisplayArtworksServlet">Artworks</a>
                     </li>
                     <li>

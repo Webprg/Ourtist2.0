@@ -50,6 +50,7 @@ public class LoginServlet extends HttpServlet {
 			Cookie cookie = new Cookie("LoggedUser",uname);
 			cookie.setMaxAge(60*60*60);
 			response.addCookie(cookie);
+			cookie.setComment(uname);
 			response.sendRedirect("index.jsp");
 			
 	        
