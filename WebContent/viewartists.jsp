@@ -45,7 +45,7 @@
 <body id="page-top" class="index">
 
     <!-- Navigation -->
-   <c:import url="navigationbar.jsp">
+    <c:import url="navigationbar.jsp">
   		<c:param name="ifloggedin" value="${ifloggedin}"/>
 	</c:import>
     
@@ -59,7 +59,7 @@
       <div class="row">
             <div class="col-md-7">
                 <a href="#">
-                    <img class="img-responsive" src="img/portfolio/Juan.jpg" alt="" style="min-height:50px;height:300px; min-width: 20px;width:700px;">
+                    <img class="img-responsive" src="images/try1.jpg" alt="" style="min-height:50px;height:300px; min-width: 20px;width:700px;">
                 </a>
             </div>
             <div class="col-md-5">
@@ -73,10 +73,11 @@
         <c:forEach items = "${artistslists}" var = "a">
 			<div class="col-sm-6 col-md-4">
           <div class="thumbnail">
-            <img src="images/Art4.jpg" alt="Painting" style="min-height:50px;height:166px; min-width: 20px;width:450px;">
+            <img src="images/${a.filename}" alt="Painting" style="min-height:50px;height:166px; min-width: 20px;width:450px;">
             <div class="caption">
               <h3 style = "margin:3px; text-align:center;width:100%">${a.name} <br></h3>
               <p style = "margin:3px; text-align:center;width:100%">${a.phone_number}<br>
+			${a.email_address}<br>
 			${a.info}<br>
 			${a.views}<br> <br> <br></p>
             </div>

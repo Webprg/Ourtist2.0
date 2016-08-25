@@ -6,6 +6,7 @@ public class Artists {
 	public static final String PHONE_NUMBER = "phone_number";
 	public static final String INFO = "info";
 	public static final String VIEWS = "views";
+	public static final String FILENAME = "filename";
 	public static final String ID_ARTISTS = "idartists";
 	public static final String EMAIL_AD = "email_address";
 	
@@ -15,7 +16,16 @@ public class Artists {
 	private String info;
 	private int views;
 	private String email_address;
+	private String filename;
 	
+	public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+
 	public String getEmail_address() {
 		return email_address;
 	}

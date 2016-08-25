@@ -20,17 +20,13 @@ public class ArtistsService {
 		
 		String sql = "SELECT * FROM " + Artists.TABLE_NAME;
 		
-		BasicDataSource bds = new BasicDataSource();
-		bds.setDriverClassName("com.mysql.jdbc.Driver");
-		bds.setUrl("jdbc:mysql://localhost:3306/ourtist");
-		bds.setUsername("root");
-		bds.setPassword("p@ssword");
+
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
-			conn = bds.getConnection();
+			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			while(rs.next()){
@@ -42,6 +38,7 @@ public class ArtistsService {
 				a.setInfo(rs.getString(Artists.INFO));
 				a.setViews(rs.getInt(Artists.VIEWS));
 				a.setIdartists(rs.getInt(Artists.ID_ARTISTS));
+				a.setFilename(rs.getString(Artists.FILENAME));
 				artistslists.add(a);
 			}
 			
