@@ -24,6 +24,7 @@ import edu.ourtist.services.ArtworksService;
 @MultipartConfig
 public class AddArtworksServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	//this is where to change the directory
 	static String location  = "/Users/Edward/Desktop/WEB-PRG Study/OURtist2/WebContent/images/";
 	public static File FOLDER = new File(location);
        
