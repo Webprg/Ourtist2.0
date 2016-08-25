@@ -16,7 +16,7 @@ public class ArtworksService {
 	
 	public ArrayList getSelectedArtworks(Artworks a){
 		ArrayList<Artworks> artworkslists = new ArrayList<>();
-		String sql = "SELECT * FROM " + Artworks.TABLE_NAME + " WHERE " + 
+		String sql = "SELECT * FROM " + Artworks.TABLE_NAME " WHERE isapprov = 1 and " + 
 		Artworks.NAME + " LIKE" + " ? ";
 		String what;
 		System.out.println(a.getName());
@@ -73,7 +73,7 @@ public class ArtworksService {
 	public ArrayList getAllArtworks(){
 		ArrayList<Artworks> artworkslists = new ArrayList<>();
 		
-		String sql = "SELECT * FROM " + Artworks.TABLE_NAME;
+		String sql = "SELECT * FROM " + Artworks.TABLE_NAME + " WHERE isapprov = 1 ";
 		
 		
 		Connection conn = null;
@@ -206,7 +206,7 @@ public class ArtworksService {
 		ArrayList<Artworks> artworkslists = new ArrayList<>();
 		
 		String sql = "SELECT * FROM " + Artworks.TABLE_NAME +
-				" ORDER by likes desc limit 0,6";
+				" where isapprov = 1 ORDER by likes desc limit 0,6"
 		
 		
 		Connection conn = null;
