@@ -35,7 +35,7 @@ CREATE TABLE `artworks` (
   `filename` varchar(45) DEFAULT NULL,
   `isapprov` int(11) DEFAULT '0',
   PRIMARY KEY (`idartworks`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `artworks` (
 
 LOCK TABLES `artworks` WRITE;
 /*!40000 ALTER TABLE `artworks` DISABLE KEYS */;
-INSERT INTO `artworks` VALUES (1,'n,mn,n','gccghf','kkjbkjb',0,'Marikina',NULL,'Art3.jpg',0),(2,'ffsda','sadfasd','safaf',0,'Manila',NULL,'Art2.jpg',0),(3,'affa','saa','asf',0,'Makati',NULL,'image2.png',0),(4,'fafa','affas','afa',0,'afasfsad',NULL,'image1.jpg',0);
+INSERT INTO `artworks` VALUES (1,'n,mn,n','gccghf','kkjbkjb',3,'Marikina',NULL,'Art3.jpg',0),(2,'ffsda','sadfasd','safaf',2,'Manila',NULL,'Art2.jpg',1),(3,'affa','saa','asf',1,'Makati',NULL,'image2.png',1),(4,'fafa','affas','afa',5,'afasfsad',NULL,'image1.jpg',1),(7,'asdfsa','afdasfas','asdfa',6,'asdfafasdfass',NULL,'1472038328070-image.jpg',0),(8,'dada','asfda','adasf',0,'asdfasf',NULL,'1472053590063-image.jpg',0),(9,'fdas','asdffa','asdfaf',0,'asdfaf',NULL,'1472053927702-image.jpg',0),(10,'fdas','asdffa','asdfaf',0,'asdfaf',NULL,'1472054725564-image.jpg',0),(11,'testwwe','wetw','wetw',0,'wettw',NULL,'Image1472055583410.jpg',0),(12,'asdsad','asdfas','asdfsafasd',0,'asdfasd',NULL,'Image1472089099179.jpg',0),(13,'dsafsaf','asdfadf','fsdafa',0,'sdaf',NULL,'Image1472089311895.jpg',0);
 /*!40000 ALTER TABLE `artworks` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-24  1:10:40
+-- Dump completed on 2016-08-25 10:43:48

@@ -1,8 +1,10 @@
--- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `ourtist` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `ourtist`;
+-- MySQL dump 10.13  Distrib 5.6.17, for Win32 (x86)
 --
--- Host: localhost    Database: ourtist
+-- Host: 127.0.0.1    Database: ourtist
 -- ------------------------------------------------------
--- Server version	5.7.13-log
+-- Server version	5.6.21-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,11 +28,12 @@ CREATE TABLE `artists` (
   `idartists` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   `phone_number` varchar(45) NOT NULL,
-  `email_address` varchar(45) NOT NULL,
   `info` text NOT NULL,
-  `views` int(11) DEFAULT NULL,
+  `views` int(11) DEFAULT '0',
+  `filename` varchar(1000) DEFAULT 'null',
+  `email_address` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idartists`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +42,7 @@ CREATE TABLE `artists` (
 
 LOCK TABLES `artists` WRITE;
 /*!40000 ALTER TABLE `artists` DISABLE KEYS */;
+INSERT INTO `artists` VALUES (1,'asdfasdf','1324433','qwde',0,'Juan.jpg','e@google.com'),(2,'fasfaf','12313','vzxczx',0,'user.jpg','e@yahoo.com');
 /*!40000 ALTER TABLE `artists` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-09  3:57:03
+-- Dump completed on 2016-08-25 10:43:48
